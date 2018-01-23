@@ -11,16 +11,16 @@
     <modelVersion>4.0.0</modelVersion>
 
     <!-- ****** artifact description ****** -->
-    <artifactId>affiliations-service-application</artifactId>
-    <name>affiliations-service-application</name>
-    <description>Module application pour le service affiliations-service. Contient les services et les API</description>
+    <artifactId>utilisateurs-service-application</artifactId>
+    <name>v</name>
+    <description>Module application pour le service utilisateurss-service. Contient les services et les API</description>
     <packaging>${application.packaging.type}</packaging>
 
     <!-- ****** Profiles maven ****** -->
     <profiles>
         <!-- Profil intelij, à activer pour profiter des fonctionnalités de run/debug pour intelij -->
         <profile>
-            <id>intellij</id>
+            <utilisateursId>intellij</utilisateursId>
             <dependencies>
                 <dependency>
                     <groupId>org.springframework.boot</groupId>
@@ -39,7 +39,7 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
-                    <mainClass>ch.globaz.affiliationservice.application.Application</mainClass>
+                    <mainClass>ch.globaz.utilisateursservice.application.Application</mainClass>
                     <fork>true</fork>
                     <skip>false</skip>
                 </configuration>

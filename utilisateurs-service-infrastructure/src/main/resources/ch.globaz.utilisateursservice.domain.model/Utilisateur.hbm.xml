@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping default-access="field">
+
+    <class name="ch.globaz.utilisateursservice.domain.model.Utilisateur" table="users" mutable="true">
+        <id name="id" column="id">
+            <generator class="org.hibernate.id.IdentityGenerator"/>
+        </id>
+
+        <component name="userId" unique="true" update="false">
+            <property name="username" column="username"/>
+        </component>
+
+        <property name="motDePasse" column="pass" not-null="true"/>
+
+        <property name="etatUtilisateur" column="etat" not-null="true">
+            <type name="org.hibernate.type.EnumType">
+                <param name="enumClass">ch.globaz.utilisateursservice.domain.model.EtatUtilisateur</param>
+                <param name="useNamed">true</param>
+            </type>
+        </property>
+
+        <property name="personneId" column="personneId" not-null="true"/>
+
+    </class>
+
+</hibernate-mapping>

@@ -45,7 +45,7 @@
         <!-- profil jar pour build de l'application en jar
          usage: mvn clean install -Pjar -->
         <profile>
-            <id>jar</id>
+            <utilisateursId>jar</utilisateursId>
             <properties>
                 <application.packaging.type>jar</application.packaging.type>
             </properties>
@@ -157,12 +157,21 @@
 
             <!-- pilote db2 type 4
             repo: interne globaz
-            doc: http://www-01.ibm.com/support/docview.wss?uid=swg21363866 -->
+            doc: http://www-01.ibm.com/support/docview.wss?uid=swg21363866 x
             <dependency>
                 <groupId>com.ibm.db2.jcc</groupId>
                 <artifactId>db2jcc4</artifactId>
                 <version>${db2.driver.version}</version>
+            </dependency>-->
+
+            <!-- https://mvnrepository.com/artifact/com.ibm.db2.jcc/db2jcc4 -->
+            <dependency>
+                <groupId>com.ibm.db2.jcc</groupId>
+                <artifactId>db2jcc4</artifactId>
+                <version>10.1</version>
             </dependency>
+
+
 
             <!-- sprnig orm module
             repo: https://mvnrepository.com/artifact/org.springframework/spring-orm
@@ -267,6 +276,29 @@
                 <scope>provided</scope>
             </dependency>
 
+
+            <!-- ********** Validation API ***** -->
+            <!-- api jsr 380 -->
+            <dependency>
+                <groupId>javax.validation</groupId>
+                <artifactId>validation-api</artifactId>
+                <version>2.0.0.Final</version>
+            </dependency>
+
+            <!-- implémentation hibernate validation api -->
+            <dependency>
+                <groupId>org.hibernate.validator</groupId>
+                <artifactId>hibernate-validator</artifactId>
+                <version>6.0.2.Final</version>
+            </dependency>
+            <dependency>
+                <groupId>org.hibernate.validator</groupId>
+                <artifactId>hibernate-validator-annotation-processor</artifactId>
+                <version>6.0.2.Final</version>
+            </dependency>
+
+
+
         </dependencies>
 
     </dependencyManagement>
@@ -283,6 +315,7 @@
             <groupId>org.assertj</groupId>
             <artifactId>assertj-core</artifactId>
         </dependency>
+
 
     </dependencies>
 
@@ -331,7 +364,7 @@
                     <version>${maven-source.plugin}</version>
                     <executions>
                         <execution>
-                            <id>attach-sources</id>
+                            <utilisateursId>attach-sources</utilisateursId>
                             <phase>verify</phase>
                             <goals>
                                 <goal>jar-no-fork</goal>
@@ -373,5 +406,16 @@
         </plugins>
 
     </build>
+
+    <repositories>
+        <repository>
+            <utilisateursId>alfresco</utilisateursId>
+            <name>alfresco</name>
+            <url>https://artifacts.alfresco.com/nexus/content/repositories/public/</url>
+        </repository>
+
+    </repositories>
+
+
 
 </project>

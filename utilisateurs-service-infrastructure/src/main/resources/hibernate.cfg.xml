@@ -10,7 +10,7 @@
     <!-- Properties defined here are shared between test and production -->
     <property name="cache.provider_class">org.hibernate.cache.internal.NoCachingRegionFactory</property>
     
-    <mapping resource="HelloWorld.hbm.xml" />
+    <mapping resource="ch.globaz.utilisateursservice.domain.model/Utilisateur.hbm.xml" />
 
   </session-factory>
 
